@@ -51,7 +51,6 @@
  */
 
 /* === Inclusiones de cabeceras ============================================ */
-#include "main.h"
 #include <stdio.h>
 
 /* === Definicion y Macros privados ======================================== */
