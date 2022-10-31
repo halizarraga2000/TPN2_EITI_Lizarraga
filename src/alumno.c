@@ -29,14 +29,9 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-/** @file plantilla.c
+/** @file alumno.c
  **
- ** @brief Plantilla de archivos fuente
- **
- ** Plantilla para los archivos de codigo fuente de prácticos de las 
- ** asignaturas Diseño Integrado de Sistemas Emebebidos y Sistemas Embebidos
- ** de Tiempo Real dictadas en de la Especialización en Integración de
- ** Sistemas Informaticos de la Univesidad Nacional de Tucumán
+ ** @brief Codigo fuente de las funciones de alumno
  ** 
  ** | RV | YYYY.MM.DD | Autor       | Descripción de los cambios              |
  ** |----|------------|-------------|-----------------------------------------|
@@ -48,7 +43,6 @@
  */
 
 /* === Inclusiones de cabeceras ============================================ */
-#include "main.h"
 #include "alumno.h"
 #include <stdio.h>
 
@@ -66,20 +60,12 @@
 
 /* === Definiciones de funciones publicas ================================== */
 
-int main(void) {
-	static const struct alumno_s alumno ={
-		.apellido = "LIZARRAGA",
-		.nombre = "Hugo",
-		.documento = "23.517.968"
-	};
-	nombre(&alumno);
+void nombre(const struct alumno_s * alumno){
 
+    printf("Apellido del Alumno: %s\r\n", alumno->apellido);
+    printf("Nombre del Alumno: %s\r\n", alumno->nombre);
+    printf("Documento del Alumno: %s\r\n", alumno->documento);
 
-	// struct alumno_s jose;
-	// jose.apellido = "LIZARRAGA"
-	// jose.nombre = "Hugo"
-
-	return 0;
 }
 
 /* === Ciere de documentacion ============================================== */

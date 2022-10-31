@@ -29,15 +29,13 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-/** @file plantilla.c
+#ifndef ALUMNO_H   /*! @cond    */
+#define ALUMNO_H   /*! @endcond */
+
+/** @file alumno.h
  **
- ** @brief Plantilla de archivos fuente
+ ** @brief Cabecera del modulo con las funciones de alumno 
  **
- ** Plantilla para los archivos de codigo fuente de prácticos de las 
- ** asignaturas Diseño Integrado de Sistemas Emebebidos y Sistemas Embebidos
- ** de Tiempo Real dictadas en de la Especialización en Integración de
- ** Sistemas Informaticos de la Univesidad Nacional de Tucumán
- ** 
  ** | RV | YYYY.MM.DD | Autor       | Descripción de los cambios              |
  ** |----|------------|-------------|-----------------------------------------|
  ** |  1 | 2022.08.27 | evolentini  | Version inicial del archivo             |
@@ -47,42 +45,34 @@
  ** @{ 
  */
 
-/* === Inclusiones de cabeceras ============================================ */
-#include "main.h"
-#include "alumno.h"
-#include <stdio.h>
+/* === Inclusiones de archivos externos ==================================== */
 
-/* === Definicion y Macros privados ======================================== */
+/* === Cabecera C++ ======================================================== */
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-/* === Declaraciones de tipos de datos privados ============================ */
+/* === Definicion y Macros publicos ======================================== */
 
-/* === Definiciones de variables privadas ================================== */
+/* == Declaraciones de tipos de datos publicos ============================= */
 
-/* === Definiciones de variables publicas ================================== */
+struct alumno_s{
+    char apellido [64];
+    char nombre [64];
+    char documento [16];
+};
 
-/* === Declaraciones de funciones privadas ================================= */
+/* === Declaraciones de variables publicas ================================= */
 
-/* === Definiciones de funciones privadas ================================== */
+/* === Declaraciones de funciones publicas ================================= */
 
-/* === Definiciones de funciones publicas ================================== */
-
-int main(void) {
-	static const struct alumno_s alumno ={
-		.apellido = "LIZARRAGA",
-		.nombre = "Hugo",
-		.documento = "23.517.968"
-	};
-	nombre(&alumno);
-
-
-	// struct alumno_s jose;
-	// jose.apellido = "LIZARRAGA"
-	// jose.nombre = "Hugo"
-
-	return 0;
-}
+void nombre(const struct alumno_s * alumno);
 
 /* === Ciere de documentacion ============================================== */
+#ifdef __cplusplus
+}
+#endif
 
 /** @} Final de la definición del modulo para doxygen */
 
+#endif   /* ALUMNO_H */
